@@ -53,7 +53,7 @@ class _SearchAdditivesScreenState extends State<SearchAdditivesScreen> {
         elevation: 0,
         backgroundColor: Colors.white,
         title: const Text(
-          'Katki Maddeleri Ara',
+          'Katki Maddeleri - Tüm Kodları Ara',
           style: TextStyle(
             color: Colors.black,
           ),
@@ -73,7 +73,7 @@ class _SearchAdditivesScreenState extends State<SearchAdditivesScreen> {
                   Padding(
                     padding: EdgeInsets.all(20.0.sp),
                     child: const Text(
-                      '\nLutfen bir katki maddesi seciniz',
+                      '\nLütfen bir katkı maddesi seçiniz.',
                       style: TextStyle(fontSize: 16, color: Colors.blueGrey),
                     ),
                   ),
@@ -232,7 +232,7 @@ class _SearchAdditivesScreenState extends State<SearchAdditivesScreen> {
                         },
                       )
                     : const Text(
-                        'Kayit Bulunamadi',
+                        'Kayıt Bulunamadı',
                         style: TextStyle(fontSize: 24),
                       ),
               );

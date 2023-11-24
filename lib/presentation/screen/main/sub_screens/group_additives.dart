@@ -40,7 +40,7 @@ class _GroupAdditivesScreenState extends State<GroupAdditiviesScreen> {
         elevation: 0,
         backgroundColor: Colors.white,
         title: const Text(
-          'Katki Maddeleri Toplu Liste Yap',
+          'Katkı Maddeleri - Toplu Liste Yap',
           style: TextStyle(
             color: Colors.black,
           ),
@@ -60,7 +60,7 @@ class _GroupAdditivesScreenState extends State<GroupAdditiviesScreen> {
               Padding(
                 padding: EdgeInsets.all(20.0.sp),
                 child: const Text(
-                  'Topluca Katki Maddelerine bakmak icin \nlutfen bir katki maddesi seciniz',
+                  'Topluca katkı maddelerine bakmak için \nlütfen bir katkı maddesi seçiniz.',
                   maxLines: 2,
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 16, color: Colors.blueGrey),
