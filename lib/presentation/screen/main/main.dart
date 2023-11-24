@@ -1,7 +1,11 @@
-
+import 'package:additives/data/data.dart';
+import 'package:additives/logic/group_additive_provider.dart';
+import 'package:additives/logic/search_additive_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-import 'components/main_tabs.dart';
+import 'sub_screens/group_additives.dart';
+import 'sub_screens/search_additives.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -12,23 +16,30 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   int pageIndex = 0;
-  int drawerIndex = 0;
-  int FAGIndex = 0;
   List<Widget> pages = [
-    const Placeholder(),
-    const Placeholder(),
+    const SearchAdditivesScreen(),
+    const GroupAdditiviesScreen(),
   ];
 
   late final List<Widget> floatingActionButtons = [
     FloatingActionButton.large(
-      onPressed: () {},
+      onPressed: () {
+        Provider.of<SearchAdditiveProvider>(context, listen: false)
+            .clearFilter(additiveMap);
+        Provider.of<SearchAdditiveProvider>(context, listen: false).clearController();
+        Provider.of<SearchAdditiveProvider>(context, listen: false).focusOnSearch();
+      },
       child: const Icon(Icons.search),
     ),
     FloatingActionButton.large(
       onPressed: () {
+        Provider.of<GroupAdditiveProvider>(context, listen: false)
+            .clearSelectedAdditives();
+        Provider.of<GroupAdditiveProvider>(context, listen: false)
+            .focusOnSearch();
         // Navigator.of(context).push(FadePageRoute(page: const CreateNewGroup()));
       },
-      child: const Icon(Icons.add),
+      child: const Icon(Icons.cleaning_services),
     )
   ];
 
@@ -50,18 +61,20 @@ class _MainScreenState extends State<MainScreen> {
         selectedIndex: pageIndex,
         destinations: const <Widget>[
           NavigationDestination(
-            selectedIcon: Icon(Icons.attach_money),
-            icon: Icon(Icons.attach_money_outlined),
-            label: 'Ekle',
+            selectedIcon: Icon(Icons.search),
+            icon: Icon(Icons.search_outlined),
+            label: 'Ara',
           ),
           NavigationDestination(
-            selectedIcon: Icon(Icons.account_balance_wallet),
-            icon: Icon(Icons.account_balance_wallet_outlined),
-            label: 'Liste',
+            selectedIcon: Icon(Icons.list),
+            icon: Icon(Icons.list_outlined),
+            label: 'Toplu Liste Yap',
           ),
         ],
       ),
-      floatingActionButton: floatingActionButtons[FAGIndex],
+      floatingActionButton: MediaQuery.of(context).viewInsets.bottom != 0
+          ? null
+          : floatingActionButtons[pageIndex],
     );
   }
 
@@ -71,14 +84,10 @@ class _MainScreenState extends State<MainScreen> {
     });
   }
 
-
-  void changeFAGWithTab(int index) {
-    print("changeFAGWithTab called");
-    setState(() {
-      FAGIndex = index;
-    });
-  }
-
-
+// void changeFAGWithTab(int index) {
+//   print("changeFAGWithTab called");
+//   setState(() {
+//     pageIndex = index;
+//   });
+// }
 }
-

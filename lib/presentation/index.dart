@@ -1,4 +1,9 @@
+import 'package:additives/logic/group_additive_provider.dart';
+import 'package:additives/logic/search_additive_provider.dart';
+import 'package:additives/presentation/screen/main/main.dart';
+import 'package:additives/presentation/screen/main/sub_screens/group_additives.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
 import 'color/material-theme/color_schemes.g.dart';
@@ -15,7 +20,12 @@ class AppStarter extends StatefulWidget {
 class _AppStarterState extends State<AppStarter> {
   @override
   Widget build(BuildContext context) {
-    return Sizer(
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => GroupAdditiveProvider()),
+        ChangeNotifierProvider(create: (_) => SearchAdditiveProvider()),
+      ],
+      child: Sizer(
         builder: (context, orientation, deviceType) {
           SystemChrome.setPreferredOrientations([
             DeviceOrientation.portraitUp,
@@ -33,21 +43,17 @@ class _AppStarterState extends State<AppStarter> {
             // supportedLocales: S.delegate.supportedLocales,
             themeMode: ThemeMode.system,
             debugShowCheckedModeBanner: false,
-            initialRoute: AppDirs.landing,
+            initialRoute: AppDirs.main,
 
-            theme:
-            ThemeData(useMaterial3: true, colorScheme: lightColorScheme),
+            theme: ThemeData(useMaterial3: true, colorScheme: lightColorScheme),
             darkTheme:
-            ThemeData(useMaterial3: true, colorScheme: darkColorScheme),
+                ThemeData(useMaterial3: true, colorScheme: darkColorScheme),
             routes: {
-              AppDirs.landing: (context) => const LandingMainScreen(),
               AppDirs.main: (context) => const MainScreen(),
-              AppDirs.profile: (context) => const ProfileScreen(),
-              AppDirs.newGroupRequest: (context) =>
-              const NewGroupRequestScreen()
             },
           );
         },
-      );
+      ),
+    );
   }
 }
