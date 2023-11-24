@@ -141,12 +141,12 @@ class _GroupAdditivesScreenState extends State<GroupAdditiviesScreen> {
                     .item;
                 Widget healthWidget = additive.health == "RED"
                     ? const Text(
-                        "Zararli",
+                        "Zararlı",
                         style: TextStyle(
                             color: Colors.red, fontWeight: FontWeight.w900),
                       )
                     : const Text(
-                        "Zararsiz",
+                        "Zararsız",
                         style: TextStyle(color: Colors.grey),
                       );
                 Widget halalWidget = additive.halal == "NORMAL"
@@ -156,7 +156,7 @@ class _GroupAdditivesScreenState extends State<GroupAdditiviesScreen> {
                       )
                     : additive.halal == "VITAL_1"
                         ? Text(
-                            "Supheli",
+                            "Şüpheli",
                             style: Theme.of(context)
                                 .textTheme
                                 .titleSmall!

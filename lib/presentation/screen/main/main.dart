@@ -22,16 +22,20 @@ class _MainScreenState extends State<MainScreen> {
   ];
 
   late final List<Widget> floatingActionButtons = [
-    FloatingActionButton.large(
+    FloatingActionButton.extended(
+      label: const Text("Filtre Temizle"),
+      icon: const Icon(Icons.search),
       onPressed: () {
         Provider.of<SearchAdditiveProvider>(context, listen: false)
             .clearFilter(additiveMap);
         Provider.of<SearchAdditiveProvider>(context, listen: false).clearController();
         Provider.of<SearchAdditiveProvider>(context, listen: false).focusOnSearch();
       },
-      child: const Icon(Icons.search),
+      // child: const Icon(Icons.search),
     ),
-    FloatingActionButton.large(
+    FloatingActionButton.extended(
+      label: const Text("Seçimleri Temizle"),
+      icon: const Icon(Icons.cleaning_services),
       onPressed: () {
         Provider.of<GroupAdditiveProvider>(context, listen: false)
             .clearSelectedAdditives();
@@ -39,7 +43,7 @@ class _MainScreenState extends State<MainScreen> {
             .focusOnSearch();
         // Navigator.of(context).push(FadePageRoute(page: const CreateNewGroup()));
       },
-      child: const Icon(Icons.cleaning_services),
+      // child: const Icon(Icons.cleaning_services),
     )
   ];
 
