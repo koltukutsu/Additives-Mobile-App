@@ -136,14 +136,17 @@ class TakePictureScreenState extends State<TakePictureScreen> {
     //     widget.pickedFile = pickedFile;
     //   });
     // }
-    await Navigator.of(context).push(MaterialPageRoute(
-      builder: (context) => DisplayPictureScreen(
-        // Pass the automatically generated path to
-        // the DisplayPictureScreen widget.
-        imagePath: pickedFile!.path,
-        imageXFile: pickedFile,
-      ),
-    ));
+    if (pickedFile != null) {
+      if (!mounted) return;
+      await Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => DisplayPictureScreen(
+          // Pass the automatically generated path to
+          // the DisplayPictureScreen widget.
+          imagePath: pickedFile!.path,
+          imageXFile: pickedFile,
+        ),
+      ));
+    }
   }
 // Future<Uint8List> _load(String assetName) async {
 //   try {
