@@ -2,6 +2,7 @@ import 'package:additives/data/data.dart';
 import 'package:additives/logic/group_additive_provider.dart';
 import 'package:additives/logic/search_additive_provider.dart';
 import 'package:additives/presentation/screen/main/components/text_detector_view.dart';
+import 'package:additives/presentation/screen/main/sub_screens/camera_control_additives.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -27,7 +28,7 @@ class _MainScreenState extends State<MainScreen> {
     const GroupAdditiviesScreen(),
     // TextRecognizerView()
     // MyApp(),
-    TakePictureScreen(
+    CameraControlAdditivesScreen(
       camera: widget.cameras[0],
     )
   ];

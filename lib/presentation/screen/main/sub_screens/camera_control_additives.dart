@@ -1,7 +1,11 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 
+import '../components/camera_preview.dart';
+
 class CameraControlAdditivesScreen extends StatefulWidget {
-  const CameraControlAdditivesScreen({super.key});
+  const CameraControlAdditivesScreen({super.key, required this.camera});
+  final CameraDescription camera;
 
   @override
   State<CameraControlAdditivesScreen> createState() => _CameraControlAdditivesScreenState();
@@ -10,6 +14,8 @@ class CameraControlAdditivesScreen extends StatefulWidget {
 class _CameraControlAdditivesScreenState extends State<CameraControlAdditivesScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return TakePictureScreen(
+      camera: widget.camera,
+    );
   }
 }

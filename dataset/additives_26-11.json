@@ -1,13 +1,4 @@
-List<String> additiveCodeList = [];
-Map descriptionAdditive = {
-  "NORMAL": "Helal kabul edilmektedir.",
-  "VITAL_1":
-      "Bitkisel veya hayvansal kökenli olabilir. Alkolle muamele edilmiş veya edilmemiş olabilir.Bu sebeple (şüpheli) kabul edilen katkıları gösterir.",
-  "VITAL_2":
-      "Kesin hayvan (çoğunlukla domuz) kökenli katkıları gösterir. (HARAM)"
-};
-
-List<Map<String, dynamic>> additiveMap = [
+[
   {
     "CODE": "E100*",
     "ADDITIVE_CODE": "E100",
@@ -1895,8 +1886,7 @@ List<Map<String, dynamic>> additiveMap = [
     "HEALTH": "BLACK",
     "HALAL": "VITAL_1",
     "CLASS": "KIVAM ARTIRICILAR, STABILIZORLER, HOMOJENLESTIRICILER",
-    "CODE_AND_NAME":
-        "E478 - Gliserol ve Propan-1'in Laktillenmi\u015f Ya\u011f Asit Esterleri",
+    "CODE_AND_NAME": "E478 - Gliserol ve Propan-1'in Laktillenmi\u015f Ya\u011f Asit Esterleri",
     "ONLY_NAME": "1'in Laktillenmi\u015f Ya\u011f Asit Esterleri"
   },
   {
@@ -1906,8 +1896,7 @@ List<Map<String, dynamic>> additiveMap = [
     "HEALTH": "BLACK",
     "HALAL": "VITAL_1",
     "CLASS": "KIVAM ARTIRICILAR, STABILIZORLER, HOMOJENLESTIRICILER",
-    "CODE_AND_NAME":
-        "E479(b) - Termal Okside Edilmi\u015f Soya Fasulye Ya\u011f\u0131 ile Etkile\u015fen Mono- ve Digliseridler",
+    "CODE_AND_NAME": "E479(b) - Termal Okside Edilmi\u015f Soya Fasulye Ya\u011f\u0131 ile Etkile\u015fen Mono- ve Digliseridler",
     "ONLY_NAME": "ve Digliseridler"
   },
   {
@@ -2647,8 +2636,7 @@ List<Map<String, dynamic>> additiveMap = [
     "HEALTH": "RED",
     "HALAL": "VITAL_1",
     "CLASS": "PARLATICILAR, TATLANDIRICILAR",
-    "CODE_AND_NAME":
-        "E905 - Parafin (Mikrokristalin balmumunu i\u00e7erebilir)",
+    "CODE_AND_NAME": "E905 - Parafin (Mikrokristalin balmumunu i\u00e7erebilir)",
     "ONLY_NAME": "Parafin (Mikrokristalin balmumunu i\u00e7erebilir)"
   },
   {
@@ -2678,8 +2666,7 @@ List<Map<String, dynamic>> additiveMap = [
     "HEALTH": "BLACK",
     "HALAL": "VITAL_1",
     "CLASS": "PARLATICILAR, TATLANDIRICILAR",
-    "CODE_AND_NAME":
-        "E913 - Lanolin (A vitamini ve D vitamini i\u00e7erebilir)",
+    "CODE_AND_NAME": "E913 - Lanolin (A vitamini ve D vitamini i\u00e7erebilir)",
     "ONLY_NAME": "Lanolin (A vitamini ve D vitamini i\u00e7erebilir)"
   },
   {
@@ -2972,4 +2959,4 @@ List<Map<String, dynamic>> additiveMap = [
     "CODE_AND_NAME": "E1520 - Propilen glikol",
     "ONLY_NAME": "Propilen glikol"
   }
-];
+]
