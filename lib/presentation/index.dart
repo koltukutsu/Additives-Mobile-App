@@ -2,7 +2,6 @@ import 'package:additives/logic/group_additive_provider.dart';
 import 'package:additives/logic/search_additive_provider.dart';
 import 'package:additives/presentation/screen/information/information.dart';
 import 'package:additives/presentation/screen/main/main.dart';
-import 'package:additives/presentation/screen/main/sub_screens/group_additives.dart';
 import 'package:camera_platform_interface/src/types/camera_description.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -11,10 +10,14 @@ import 'package:sizer/sizer.dart';
 import 'color/material-theme/color_schemes.g.dart';
 import 'common_import.dart';
 import 'directory/directory.dart';
+import 'screen/animated_splash_screen/animated_splash_screen.dart';
 
 class AppStarter extends StatefulWidget {
-  const AppStarter({super.key, required  this.cameras});
+  const AppStarter({super.key, required this.cameras, required this.randomItem});
+
   final List<CameraDescription> cameras;
+  final String randomItem;
+
   @override
   State<AppStarter> createState() => _AppStarterState();
 }
@@ -52,7 +55,9 @@ class _AppStarterState extends State<AppStarter> {
                 ThemeData(useMaterial3: true, colorScheme: darkColorScheme),
             routes: {
               AppDirs.main: (context) => MainScreen(cameras: widget.cameras),
-              AppDirs.information: (context) => InformationScreen(),
+              AppDirs.information: (context) => const InformationScreen(),
+              AppDirs.landing: (context) =>
+                  MainAnimatedSplashScreen(cameras: widget.cameras, randomItem: widget.randomItem),
             },
           );
         },

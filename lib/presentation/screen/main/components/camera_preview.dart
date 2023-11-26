@@ -5,7 +5,6 @@ import 'package:additives/data/data.dart';
 import 'package:additives/model/additive.dart';
 import 'package:additives/presentation/screen/main/components/text_detector_painter.dart';
 import 'package:camera/camera.dart';
-import 'package:crop_your_image/crop_your_image.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -179,7 +178,7 @@ class _DisplayPictureScreenState extends State<DisplayPictureScreen> {
   CustomPaint? _customPaint;
   String? _text;
   final _cameraLensDirection = CameraLensDirection.back;
-  final _controller = CropController();
+  // final _controller = CropController();
 
   @override
   void initState() {
