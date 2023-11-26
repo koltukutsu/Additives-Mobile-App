@@ -101,11 +101,11 @@ class _MainScreenState extends State<MainScreen> {
             icon: Icon(Icons.list_outlined),
             label: 'Toplu Liste Yap',
           ),
-          NavigationDestination(
-            selectedIcon: Icon(Icons.camera_alt),
-            icon: Icon(Icons.camera_alt_outlined),
-            label: 'Kamera ile Yakala',
-          ),
+          // NavigationDestination(
+          //   selectedIcon: Icon(Icons.camera_alt),
+          //   icon: Icon(Icons.camera_alt_outlined),
+          //   label: 'Kamera ile Yakala',
+          // ),
         ],
       ),
       floatingActionButton: MediaQuery.of(context).viewInsets.bottom != 0
