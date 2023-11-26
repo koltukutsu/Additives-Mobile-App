@@ -49,6 +49,15 @@ class _MainAnimatedSplashScreenState extends State<MainAnimatedSplashScreen> {
                   .textTheme
                   .titleMedium!
                   .copyWith(fontWeight: FontWeight.w500),
+            ),
+            Text(
+              "Hadis-i Şerif, Buhari",
+              maxLines: 3,
+              textAlign: TextAlign.center,
+              style: Theme.of(context)
+                  .textTheme
+                  .titleMedium!
+                  .copyWith(fontWeight: FontWeight.w300),
             )
           ],
         ),
