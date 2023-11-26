@@ -48,7 +48,7 @@ class _AppStarterState extends State<AppStarter> {
             // supportedLocales: S.delegate.supportedLocales,
             themeMode: ThemeMode.system,
             debugShowCheckedModeBanner: false,
-            initialRoute: AppDirs.main,
+            initialRoute: AppDirs.landing,
 
             theme: ThemeData(useMaterial3: true, colorScheme: lightColorScheme),
             darkTheme:
