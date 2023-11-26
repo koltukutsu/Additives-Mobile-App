@@ -79,7 +79,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
             // Attempt to take a picture and get the file `image`
             // where it was saved.
             final XFile image = await _controller.takePicture();
-
+            final Uint8List takemBytes = await image.readAsBytes();
             if (!mounted) return;
 
             // File(widget.imagePath).readAsBytes()
@@ -93,7 +93,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
                   // Pass the automatically generated path to
                   // the DisplayPictureScreen widget.
                   imagePath: image.path,
-                  imageBytes: imageBytes,
+                  imageBytes: takemBytes,
                 ),
               ),
             );
