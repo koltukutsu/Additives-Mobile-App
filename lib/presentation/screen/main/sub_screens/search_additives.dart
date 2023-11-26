@@ -1,6 +1,7 @@
 import 'package:additives/data/data.dart';
 import 'package:additives/logic/search_additive_provider.dart';
 import 'package:additives/model/additive.dart';
+import 'package:additives/presentation/directory/directory.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
@@ -52,6 +53,14 @@ class _SearchAdditivesScreenState extends State<SearchAdditivesScreen> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).pushNamed(AppDirs.information);
+            },
+            icon: const Icon(Icons.info_outline),
+          )
+        ],
         title: const Text(
           'Katki Maddeleri - Tüm Kodları Ara',
           style: TextStyle(

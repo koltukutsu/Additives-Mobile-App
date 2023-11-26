@@ -1,5 +1,6 @@
 import 'package:additives/logic/group_additive_provider.dart';
 import 'package:additives/logic/search_additive_provider.dart';
+import 'package:additives/presentation/screen/information/information.dart';
 import 'package:additives/presentation/screen/main/main.dart';
 import 'package:additives/presentation/screen/main/sub_screens/group_additives.dart';
 import 'package:camera_platform_interface/src/types/camera_description.dart';
@@ -51,6 +52,7 @@ class _AppStarterState extends State<AppStarter> {
                 ThemeData(useMaterial3: true, colorScheme: darkColorScheme),
             routes: {
               AppDirs.main: (context) => MainScreen(cameras: widget.cameras),
+              AppDirs.information: (context) => InformationScreen(),
             },
           );
         },
