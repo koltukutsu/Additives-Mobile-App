@@ -1,14 +1,20 @@
 import 'package:additives/data/data.dart';
 import 'package:additives/logic/group_additive_provider.dart';
 import 'package:additives/logic/search_additive_provider.dart';
+import 'package:additives/presentation/screen/main/components/text_detector_view.dart';
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'components/camera_preview.dart';
+import 'components/edge_detection.dart';
 import 'sub_screens/group_additives.dart';
 import 'sub_screens/search_additives.dart';
 
 class MainScreen extends StatefulWidget {
-  const MainScreen({super.key});
+  const MainScreen({super.key, required this.cameras});
+
+  final List<CameraDescription> cameras;
 
   @override
   State<MainScreen> createState() => _MainScreenState();
@@ -16,9 +22,14 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   int pageIndex = 0;
-  List<Widget> pages = [
+  late List<Widget> pages = [
     const SearchAdditivesScreen(),
     const GroupAdditiviesScreen(),
+    // TextRecognizerView()
+    // MyApp(),
+    TakePictureScreen(
+      camera: widget.cameras[0],
+    )
   ];
 
   late final List<Widget> floatingActionButtons = [
@@ -28,14 +39,28 @@ class _MainScreenState extends State<MainScreen> {
       onPressed: () {
         Provider.of<SearchAdditiveProvider>(context, listen: false)
             .clearFilter(additiveMap);
-        Provider.of<SearchAdditiveProvider>(context, listen: false).clearController();
-        Provider.of<SearchAdditiveProvider>(context, listen: false).focusOnSearch();
+        Provider.of<SearchAdditiveProvider>(context, listen: false)
+            .clearController();
+        Provider.of<SearchAdditiveProvider>(context, listen: false)
+            .focusOnSearch();
       },
       // child: const Icon(Icons.search),
     ),
     FloatingActionButton.extended(
       label: const Text("Seçimleri Temizle"),
       icon: const Icon(Icons.cleaning_services),
+      onPressed: () {
+        Provider.of<GroupAdditiveProvider>(context, listen: false)
+            .clearSelectedAdditives();
+        Provider.of<GroupAdditiveProvider>(context, listen: false)
+            .focusOnSearch();
+        // Navigator.of(context).push(FadePageRoute(page: const CreateNewGroup()));
+      },
+      // child: const Icon(Icons.cleaning_services),
+    ),
+    FloatingActionButton.extended(
+      label: const Text("Yakala"),
+      icon: const Icon(Icons.camera),
       onPressed: () {
         Provider.of<GroupAdditiveProvider>(context, listen: false)
             .clearSelectedAdditives();
@@ -51,6 +76,7 @@ class _MainScreenState extends State<MainScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
+    // add camera initialization here
   }
 
   @override
@@ -74,11 +100,18 @@ class _MainScreenState extends State<MainScreen> {
             icon: Icon(Icons.list_outlined),
             label: 'Toplu Liste Yap',
           ),
+          NavigationDestination(
+            selectedIcon: Icon(Icons.camera_alt),
+            icon: Icon(Icons.camera_alt_outlined),
+            label: 'Kamera ile Yakala',
+          ),
         ],
       ),
       floatingActionButton: MediaQuery.of(context).viewInsets.bottom != 0
           ? null
-          : floatingActionButtons[pageIndex],
+          : pageIndex == 2
+              ? null
+              : floatingActionButtons[pageIndex],
     );
   }
 
