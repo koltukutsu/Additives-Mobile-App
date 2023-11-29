@@ -13,9 +13,10 @@ import 'sub_screens/group_additives.dart';
 import 'sub_screens/search_additives.dart';
 
 class MainScreen extends StatefulWidget {
-  const MainScreen({super.key, required this.cameras});
+  // const MainScreen({super.key, required this.cameras});
+  const MainScreen({super.key});
 
-  final List<CameraDescription> cameras;
+  // final List<CameraDescription> cameras;
 
   @override
   State<MainScreen> createState() => _MainScreenState();
@@ -28,9 +29,9 @@ class _MainScreenState extends State<MainScreen> {
     const GroupAdditiviesScreen(),
     // TextRecognizerView()
     // MyApp(),
-    CameraControlAdditivesScreen(
-      camera: widget.cameras[0],
-    )
+    // CameraControlAdditivesScreen(
+    //   // camera: widget.cameras[0],
+    // )
   ];
 
   late final List<Widget> floatingActionButtons = [

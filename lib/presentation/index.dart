@@ -13,9 +13,10 @@ import 'directory/directory.dart';
 import 'screen/animated_splash_screen/animated_splash_screen.dart';
 
 class AppStarter extends StatefulWidget {
-  const AppStarter({super.key, required this.cameras, required this.randomItem});
+  // const AppStarter({super.key, required this.cameras, required this.randomItem});
+  const AppStarter({required this.randomItem});
 
-  final List<CameraDescription> cameras;
+  // final List<CameraDescription> cameras;
   final String randomItem;
 
   @override
@@ -54,10 +55,12 @@ class _AppStarterState extends State<AppStarter> {
             darkTheme:
                 ThemeData(useMaterial3: true, colorScheme: darkColorScheme),
             routes: {
-              AppDirs.main: (context) => MainScreen(cameras: widget.cameras),
+              // AppDirs.main: (context) => MainScreen(cameras: widget.cameras),
+              AppDirs.main: (context) => MainScreen(),
               AppDirs.information: (context) => const InformationScreen(),
               AppDirs.landing: (context) =>
-                  MainAnimatedSplashScreen(cameras: widget.cameras, randomItem: widget.randomItem),
+                  // MainAnimatedSplashScreen(cameras: widget.cameras, randomItem: widget.randomItem),
+                  MainAnimatedSplashScreen(randomItem: widget.randomItem),
             },
           );
         },
