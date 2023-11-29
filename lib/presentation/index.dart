@@ -39,7 +39,7 @@ class _AppStarterState extends State<AppStarter> {
           ]);
           return MaterialApp(
             // theme: darkTheme,
-            title: "Katki Maddeleri",
+            title: "Katkı Maddeleri",
             // localizationsDelegates: const [
             //   S.delegate,
             //   GlobalMaterialLocalizations.delegate,
