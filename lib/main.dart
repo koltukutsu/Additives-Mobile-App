@@ -8,7 +8,7 @@ import 'package:sizer/sizer.dart';
 
 import 'data/data.dart';
 
-late List<CameraDescription> _cameras;
+// late List<CameraDescription> _cameras;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
