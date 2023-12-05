@@ -52,7 +52,7 @@ class _AppStarterState extends State<AppStarter> {
 
             theme: ThemeData(useMaterial3: true, colorScheme: lightColorScheme),
             darkTheme:
-                ThemeData(useMaterial3: true, colorScheme: darkColorScheme),
+                ThemeData(useMaterial3: true, colorScheme: lightColorScheme),
             routes: {
               AppDirs.main: (context) => MainScreen(cameras: widget.cameras),
               AppDirs.information: (context) => const InformationScreen(),
