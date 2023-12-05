@@ -7,11 +7,12 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 class MainAnimatedSplashScreen extends StatefulWidget {
-  final List<CameraDescription> cameras;
+  // final List<CameraDescription> cameras;
   final String randomItem;
 
   const MainAnimatedSplashScreen(
-      {Key? key, required this.cameras, required this.randomItem})
+      // {Key? key, required this.cameras, required this.randomItem})
+      {Key? key, required this.randomItem})
       : super(key: key);
 
   @override
@@ -63,7 +64,8 @@ class _MainAnimatedSplashScreenState extends State<MainAnimatedSplashScreen> {
         ),
       ),
       // TODO: splash ekrani ozel animasyon yada resim
-      nextScreen: MainScreen(cameras: widget.cameras),
+      // nextScreen: MainScreen(cameras: widget.cameras),
+      nextScreen: MainScreen(),
       splashIconSize: MediaQuery.of(context).size.width,
       splashTransition: SplashTransition.fadeTransition,
       // backgroundColor: CevappColors.backgroundColor,
