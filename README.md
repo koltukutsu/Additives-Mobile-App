@@ -2,6 +2,8 @@
 
 A project that provides the list of Turkish Additives
 
+[Link for Google Play](https://play.google.com/store/apps/details?id=koltukutsu.com.katkiMaddeleri)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
